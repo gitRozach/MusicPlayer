@@ -1,0 +1,192 @@
+#frequency-visualizer {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: #e4e4e4;
+  background: radial-gradient(circle, #e4e4e4 0%, #3bf354 46%, #4a4949 100%);
+  -webkit-animation: wheelHueColor 7s infinite;
+          animation: wheelHueColor 7s infinite;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+@-webkit-keyframes wheelHueColor {
+  from, to {
+    background: rgba(236, 99, 75, 0.7);
+  }
+  10% {
+    background: rgba(219, 10, 91, 0.7);
+  }
+  20% {
+    background: rgba(174, 168, 211, 0.7);
+  }
+  30% {
+    background: rgba(89, 171, 227, 0.7);
+  }
+  40% {
+    background: rgba(37, 116, 169, 0.7);
+  }
+  50% {
+    background: rgba(3, 201, 169, 0.7);
+  }
+  60% {
+    background: rgba(22, 160, 133, 0.7);
+  }
+  70% {
+    background: rgba(233, 212, 96, 0.7);
+  }
+  80% {
+    background: rgba(243, 156, 18, 0.7);
+  }
+  90% {
+    background: rgba(236, 240, 241, 0.7);
+  }
+}
+
+@keyframes wheelHueColor {
+  from, to {
+    background: rgba(236, 99, 75, 0.7);
+  }
+  10% {
+    background: rgba(219, 10, 91, 0.7);
+  }
+  20% {
+    background: rgba(174, 168, 211, 0.7);
+  }
+  30% {
+    background: rgba(89, 171, 227, 0.7);
+  }
+  40% {
+    background: rgba(37, 116, 169, 0.7);
+  }
+  50% {
+    background: rgba(3, 201, 169, 0.7);
+  }
+  60% {
+    background: rgba(22, 160, 133, 0.7);
+  }
+  70% {
+    background: rgba(233, 212, 96, 0.7);
+  }
+  80% {
+    background: rgba(243, 156, 18, 0.7);
+  }
+  90% {
+    background: rgba(236, 240, 241, 0.7);
+  }
+}
+
+#frequency-visualizer .FrequencyCircle {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  width: 25rem;
+  height: 25rem;
+  -webkit-transition: all 50ms ease-in-out;
+  transition: all 50ms ease-in-out;
+  -webkit-animation: wheelHueColor 3s infinite;
+          animation: wheelHueColor 3s infinite;
+}
+
+@keyframes wheelHueColor {
+  from, to {
+    background: rgba(236, 99, 75, 0.7);
+  }
+  10% {
+    background: rgba(219, 10, 91, 0.7);
+  }
+  20% {
+    background: rgba(174, 168, 211, 0.7);
+  }
+  30% {
+    background: rgba(89, 171, 227, 0.7);
+  }
+  40% {
+    background: rgba(37, 116, 169, 0.7);
+  }
+  50% {
+    background: rgba(3, 201, 169, 0.7);
+  }
+  60% {
+    background: rgba(22, 160, 133, 0.7);
+  }
+  70% {
+    background: rgba(233, 212, 96, 0.7);
+  }
+  80% {
+    background: rgba(243, 156, 18, 0.7);
+  }
+  90% {
+    background: rgba(236, 240, 241, 0.7);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #frequency-visualizer .FrequencyCircle {
+    width: 20rem;
+    height: 20rem;
+  }
+}
+
+#frequency-visualizer .FrequencyRing {
+  position: absolute;
+  background: transparent;
+  border: 1.7rem solid rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  width: 1rem;
+  height: 1rem;
+}
+
+@media screen and (max-width: 800px) {
+  #frequency-visualizer .FrequencyRing {
+    width: 20rem;
+    height: 20rem;
+  }
+}
+
+#IconContainer {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#IconImg {
+  position: absolute;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  margin: 0;
+  border: 0.5rem solid rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  width: 20rem;
+  background-size: cover;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+#IconImg :hover {
+  border: 0.3rem solid rgba(255, 255, 255, 0.75);
+  border-radius: 0px;
+  width: 15rem;
+  margin: 0;
+  padding: 5px;
+}
+/*# sourceMappingURL=AudioPlayerContent.css.map */

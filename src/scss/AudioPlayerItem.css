@@ -1,0 +1,69 @@
+.AudioPlayerItem {
+  font-family: 'Source Sans Pro', sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+  -webkit-transition: background .2s ease-in-out;
+  transition: background .2s ease-in-out;
+  -webkit-transition: width 100ms ease-in-out;
+  transition: width 100ms ease-in-out;
+}
+
+.AudioPlayerItem:hover {
+  background: rgba(0, 0, 0, 0.15);
+  width: 111%;
+}
+
+.AudioPlayerItem:active {
+  width: 177%;
+}
+
+.AudioPlayerItem .AudioPlayerItemImageContainer {
+  margin: 10px 10px;
+}
+
+.AudioPlayerItem .AudioPlayerItemImageContainer #AudioPlayerItemImage {
+  width: 4rem;
+  height: auto;
+  border-radius: 50%;
+  border: 4px solid red;
+}
+
+.AudioPlayerItem .AudioPlayerItemInfoContainer {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 45% 15% 15% 15%;
+      grid-template-columns: 45% 15% 15% 15%;
+  width: 100%;
+  -webkit-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+}
+
+.AudioPlayerItem .AudioPlayerItemInfoContainer #AudioPlayerItemImage {
+  width: 5rem;
+  height: 5rem;
+}
+
+.AudioPlayerItem .AudioPlayerItemInfoContainer #AudioPlayerItemTitle {
+  color: white;
+}
+
+.AudioPlayerItem .AudioPlayerItemInfoContainer #AudioPlayerItemAlbum {
+  color: white;
+}
+
+.AudioPlayerItem .AudioPlayerItemInfoContainer #AudioPlayerItemArtists {
+  color: white;
+}
+
+.AudioPlayerItem .AudioPlayerItemInfoContainer #AudioPlayerItemDuration {
+  color: white;
+}
+/*# sourceMappingURL=AudioPlayerItem.css.map */

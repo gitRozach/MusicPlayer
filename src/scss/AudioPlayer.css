@@ -1,0 +1,317 @@
+::-moz-selection {
+  color: #008cc4;
+}
+
+::selection {
+  color: #008cc4;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+* {
+  font-family: 'Source Sans Pro', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: white;
+  overflow: hidden;
+}
+
+.preloader {
+  position: fixed;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-animation: none;
+          animation: none;
+  z-index: 1000;
+}
+
+.preloader:before {
+  position: absolute;
+  content: '';
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: black;
+}
+
+.preloader:after {
+  position: absolute;
+  content: '';
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: black;
+}
+
+.preloader.finished:before {
+  -webkit-animation: preloader-finished-before-anim 1s forwards .5s;
+          animation: preloader-finished-before-anim 1s forwards .5s;
+}
+
+@-webkit-keyframes preloader-finished-before-anim {
+  to {
+    left: -50%;
+    opacity: 0;
+  }
+}
+
+@keyframes preloader-finished-before-anim {
+  to {
+    left: -50%;
+    opacity: 0;
+  }
+}
+
+.preloader.finished:after {
+  -webkit-animation: preloader-finished-after-anim 1s forwards .5s;
+          animation: preloader-finished-after-anim 1s forwards .5s;
+}
+
+@-webkit-keyframes preloader-finished-after-anim {
+  to {
+    right: -50%;
+    opacity: 0;
+  }
+}
+
+@keyframes preloader-finished-after-anim {
+  to {
+    right: -50%;
+    opacity: 0;
+  }
+}
+
+/************************ Main Containers ************************/
+#main, #root {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.App {
+  text-align: center;
+  display: -ms-grid;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+}
+
+.AppHeader {
+  position: absolute;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  top: 0;
+  height: 100px;
+  width: 100%;
+  background: rgba(41, 41, 41, 0.7);
+  z-index: 10;
+}
+
+.AppContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: transparent;
+  z-index: 2;
+}
+
+.AppControls {
+  position: absolute;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  bottom: 0;
+  height: 150px;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 10;
+  background: rgba(41, 41, 41, 0.7);
+}
+
+.AppControls #SliderTimeContainer {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 50vw auto;
+      grid-template-columns: auto 50vw auto;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+  padding: 10px;
+}
+
+.AppControls #ButtonContainer {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto auto auto;
+      grid-template-columns: auto auto auto auto auto;
+}
+
+.AppControls button {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin: 25px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  background: rgba(61, 61, 61, 0.9);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.AppControls button:hover {
+  background: #6e6e6e;
+  width: 55px;
+  height: 55px;
+}
+
+.AppControls button:active {
+  background: #a1a1a1;
+  width: 60px;
+  height: 60px;
+}
+
+#TrackList {
+  position: absolute;
+  display: inline;
+  overflow-y: scroll;
+  color: white;
+  right: -100%;
+  top: 100px;
+  height: calc(100% - 250px);
+  -webkit-transition: width .3s ease-in-out;
+  transition: width .3s ease-in-out;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+@media screen and (max-width: 800px) {
+  #TrackList {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 801px) {
+  #TrackList {
+    width: 100%;
+  }
+}
+
+#TrackList button {
+  margin: 10px;
+  width: 90%;
+  height: 50px;
+  border-radius: 5px;
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  background: rgba(80, 80, 80, 0.6);
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+#TrackList button:hover {
+  background: #6e6e6e;
+}
+
+#TrackList button:active {
+  background: #a1a1a1;
+  width: 95%;
+}
+
+#TrackList.TracklistOpen {
+  -webkit-animation: tracklist-open-animation .5s forwards;
+          animation: tracklist-open-animation .5s forwards;
+}
+
+@-webkit-keyframes tracklist-open-animation {
+  from {
+    right: -100%;
+    opacity: 0.0;
+  }
+  to {
+    right: 0px;
+    opacity: 1.0;
+  }
+}
+
+@keyframes tracklist-open-animation {
+  from {
+    right: -100%;
+    opacity: 0.0;
+  }
+  to {
+    right: 0px;
+    opacity: 1.0;
+  }
+}
+
+#TrackList.TracklistClosed {
+  -webkit-animation: tracklist-close-animation .5s forwards;
+          animation: tracklist-close-animation .5s forwards;
+}
+
+@-webkit-keyframes tracklist-close-animation {
+  from {
+    right: 0px;
+    opacity: 1.0;
+  }
+  to {
+    right: -100%;
+    opacity: 0.0;
+  }
+}
+
+@keyframes tracklist-close-animation {
+  from {
+    right: 0px;
+    opacity: 1.0;
+  }
+  to {
+    right: -100%;
+    opacity: 0.0;
+  }
+}
+
+#FileInput {
+  width: 0px;
+  height: 0px;
+}
+
+#SliderTimeContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+/*# sourceMappingURL=AudioPlayer.css.map */
